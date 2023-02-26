@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "96b0240b-117c-46fc-941f-8499dde96543",
+		"name": "Node28_BT_Sequelize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23671391"
+	},
+	"item": [
+		{
+			"name": "Get all user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"host": true,
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjM0LCJmdWxsX25hbWUiOiJCY3J5cHQgRGFuZyIsImVtYWlsIjoiZW1haWxiY3J5cHRAbWFpbC5tYWlsIiwicGFzc193b3JkIjoiJDJiJDEwJDRwVFNsODYzTlZjUXpFZXVyTDBidk9zaktIYTVtT2lKVGt4MkRta2loSnVrUjdMY2VDL2RTIn0sImlhdCI6MTY3NjI5MzA0OCwiZXhwIjoxNjc3MTU3MDQ4fQ.2pZn7MIss7nYoJTsOwaWW5iWps4lg7RyK5BwYlJjhGQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/user/getUser",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"getUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rate restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": \"5\",\r\n    \"user_id\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/res/rateRes/:res_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"rateRes",
+						":res_id"
+					],
+					"variable": [
+						{
+							"key": "res_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order food",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": \"5\",\r\n    \"code\" : \"ABCXYZ\",\r\n    \"arr_sub_id\": \"[1, 2]\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/orderFood/:food_id/:user_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"orderFood",
+						":food_id",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "food_id",
+							"value": "1"
+						},
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/res/likeRes/:res_id/:user_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"likeRes",
+						":res_id",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "res_id",
+							"value": "2"
+						},
+						{
+							"key": "user_id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unlike restaurant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/res/unlikeRes/:res_id/:user_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"unlikeRes",
+						":res_id",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "res_id",
+							"value": "2"
+						},
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get like list by user_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/res/getLikeByUser/:user_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"getLikeByUser",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get like list by res_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/res/getLikeByRes/:res_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"getLikeByRes",
+						":res_id"
+					],
+					"variable": [
+						{
+							"key": "res_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get rate list by user_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/res/getRateByUser/:user_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"getRateByUser",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get rate list by res_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/res/getRateByRes/:res_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"getRateByRes",
+						":res_id"
+					],
+					"variable": [
+						{
+							"key": "res_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}

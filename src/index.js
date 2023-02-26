@@ -32,8 +32,4 @@ const model = new PrismaClient();
 //import rootRoute
 const rootRoute = require("./routes/rootRoute");
 
-app.get("/getUser", async (req, res) => {
-  let data = await model.user.findMany();
-  res.send(data);
-});
 app.use("/api", rootRoute);
