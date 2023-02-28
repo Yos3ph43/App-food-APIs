@@ -46,7 +46,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"amount\": \"5\",\r\n    \"user_id\": \"2\"\r\n}",
+					"raw": "{\r\n    \"amount\": \"2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -54,19 +54,24 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/res/rateRes/:res_id",
+					"raw": "{{domain}}/res/rateRes/:res_id/:user_id",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
 						"res",
 						"rateRes",
-						":res_id"
+						":res_id",
+						":user_id"
 					],
 					"variable": [
 						{
 							"key": "res_id",
 							"value": "2"
+						},
+						{
+							"key": "user_id",
+							"value": "3"
 						}
 					]
 				}
@@ -145,6 +150,45 @@
 						{
 							"key": "user_id",
 							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like/Unlike restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/res/likeUnlikeRes/:res_id/:user_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"res",
+						"likeUnlikeRes",
+						":res_id",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "res_id",
+							"value": "1"
+						},
+						{
+							"key": "user_id",
+							"value": "1"
 						}
 					]
 				}
